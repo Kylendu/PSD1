@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Import Library &#8212; My sample book</title>
+    <title>Over-Sampling &#8212; My sample book</title>
   
   
   
@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/costom.css?v=c5ad1e6b" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -147,8 +148,14 @@
   
   
   
+    
+    
+      
+    
+    
+    <img src="_static/profil.jpg" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/profil.jpg" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
   
-    <p class="title logo__title">My sample book</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -175,13 +182,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Business_Understanding_iris.html">Business Understanding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Data_Understanding_iris.html">Data Understanding</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Import Library</a></li>
-
-
-
-
-
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Over-Sampling</a></li>
 </ul>
 
     </div>
@@ -367,7 +368,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Import Library</h1>
+    <h1>Over-Sampling</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -377,44 +378,43 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Import Library</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-awal-distribusi-kelas">Eksplorasi Awal &amp; Distribusi Kelas</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#persiapan-data">Persiapan Data</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eksperimen-1-data-belum-diseimbangkan">1. <strong>Eksperimen 1 – Data Belum Diseimbangkan</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes-data-belum-diseimbangkan"><strong>Naive Bayes – Data Belum Diseimbangkan</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest-data-belum-diseimbangkan"><strong>Random Forest – Data Belum Diseimbangkan</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging-classifier-data-belum-diseimbangkan"><strong>Bagging Classifier – Data Belum Diseimbangkan</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging-dengan-naive-bayes">Bagging dengan Naive Bayes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging-dengan-decision-tree">Bagging dengan Decision Tree</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">Import Library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-awal-distribusi-kelas">Eksplorasi Awal &amp; Distribusi Kelas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persiapan-data">Persiapan Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksperimen-1-data-belum-diseimbangkan">1. <strong>Eksperimen 1 – Data Belum Diseimbangkan</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes-data-belum-diseimbangkan"><strong>Naive Bayes – Data Belum Diseimbangkan</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest-data-belum-diseimbangkan"><strong>Random Forest – Data Belum Diseimbangkan</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging-classifier-data-belum-diseimbangkan"><strong>Bagging Classifier – Data Belum Diseimbangkan</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging-dengan-naive-bayes">Bagging dengan Naive Bayes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging-dengan-decision-tree">Bagging dengan Decision Tree</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eksperimen-2-data-seimbang-dengan-smote"><strong>Eksperimen 2 – Data Seimbang dengan SMOTE</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-dengan-smote">PCA dengan SMOTE</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes-data-seimbang-smote"><strong>Naive Bayes – Data Seimbang (SMOTE)</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest-data-seimbang-smote"><strong>Random Forest – Data Seimbang (SMOTE)</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging-classifier-data-seimbang-smote"><strong>Bagging Classifier – Data Seimbang (SMOTE)</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Bagging dengan Naive Bayes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Bagging dengan Decision Tree</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksperimen-2-data-seimbang-dengan-smote"><strong>Eksperimen 2 – Data Seimbang dengan SMOTE</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-dengan-smote">PCA dengan SMOTE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes-data-seimbang-smote"><strong>Naive Bayes – Data Seimbang (SMOTE)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest-data-seimbang-smote"><strong>Random Forest – Data Seimbang (SMOTE)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging-classifier-data-seimbang-smote"><strong>Bagging Classifier – Data Seimbang (SMOTE)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Bagging dengan Naive Bayes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Bagging dengan Decision Tree</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eksperimen-3-adasyn"><strong>3. Eksperimen 3 – ADASYN</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-sesudah-adasyn">PCA sesudah ADASYN</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes-data-seimbang-adasyn"><strong>Naive Bayes – Data Seimbang (ADASYN)</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest-data-seimbang-adasyn"><strong>Random Forest – Data Seimbang (ADASYN)</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging-classifier-data-seimbang-adasyn"><strong>Bagging Classifier – Data Seimbang (ADASYN)</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Bagging dengan Naive Bayes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Bagging dengan Decision Tree</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksperimen-3-adasyn"><strong>3. Eksperimen 3 – ADASYN</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-sesudah-adasyn">PCA sesudah ADASYN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes-data-seimbang-adasyn"><strong>Naive Bayes – Data Seimbang (ADASYN)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest-data-seimbang-adasyn"><strong>Random Forest – Data Seimbang (ADASYN)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging-classifier-data-seimbang-adasyn"><strong>Bagging Classifier – Data Seimbang (ADASYN)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Bagging dengan Naive Bayes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Bagging dengan Decision Tree</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-hasil-klasifikasi-data-asli-vs-smote-vs-adasyn">Perbandingan Hasil Klasifikasi – Data Asli vs SMOTE vs ADASYN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-hasil-klasifikasi-data-asli-vs-smote-vs-adasyn">Perbandingan Hasil Klasifikasi – Data Asli vs SMOTE vs ADASYN</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -425,30 +425,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>mysql-connector-python<span class="w"> </span>pandas
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: mysql-connector-python in /usr/local/python/3.12.1/lib/python3.12/site-packages (9.4.0)
-Requirement already satisfied: pandas in /home/codespace/.local/lib/python3.12/site-packages (2.3.1)
-Requirement already satisfied: numpy&gt;=1.26.0 in /home/codespace/.local/lib/python3.12/site-packages (from pandas) (2.3.1)
-Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/codespace/.local/lib/python3.12/site-packages (from pandas) (2.9.0.post0)
-Requirement already satisfied: pytz&gt;=2020.1 in /home/codespace/.local/lib/python3.12/site-packages (from pandas) (2025.2)
-Requirement already satisfied: tzdata&gt;=2022.7 in /home/codespace/.local/lib/python3.12/site-packages (from pandas) (2025.2)
-Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3.12/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas) (1.17.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">25.1.1</span> -&gt; <span class=" -Color -Color-Green">25.2</span>
-<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">python3 -m pip install --upgrade pip</span>
-</pre></div>
-</div>
-</div>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="over-sampling">
+<h1>Over-Sampling<a class="headerlink" href="#over-sampling" title="Link to this heading">#</a></h1>
 <section id="import-library">
-<h1>Import Library<a class="headerlink" href="#import-library" title="Link to this heading">#</a></h1>
+<h2>Import Library<a class="headerlink" href="#import-library" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -467,19 +447,6 @@ Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">12</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">accuracy_score</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">RandomForestClassifier</span><span class="p">,</span> <span class="n">BaggingClassifier</span>
-<span class="ne">---&gt; </span><span class="mi">12</span> <span class="kn">from</span><span class="w"> </span><span class="nn">imblearn.over_sampling</span><span class="w"> </span><span class="kn">import</span> <span class="n">SMOTE</span><span class="p">,</span> <span class="n">ADASYN</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">LabelEncoder</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;imblearn&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -489,7 +456,7 @@ Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3
 <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 
 <span class="c1"># arahkan ke file .env yang benar</span>
-<span class="n">load_dotenv</span><span class="p">(</span><span class="n">dotenv_path</span><span class="o">=</span><span class="s2">&quot;/workspaces/PSD/Tugas/.env&quot;</span><span class="p">)</span>
+<span class="n">load_dotenv</span><span class="p">(</span><span class="n">dotenv_path</span><span class="o">=</span><span class="s2">&quot;/workspaces/PSD1/Tugas/.env&quot;</span><span class="p">)</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">get_env</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="n">value</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
@@ -532,7 +499,7 @@ Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3
 4    ACKA_ECOLI  0.59  0.49  0.48  0.5  0.52  0.45  0.36    cp
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_19539/3324377466.py:32: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_32899/2402679444.py:32: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
   df = pd.read_sql(query, conn)
 </pre></div>
 </div>
@@ -540,7 +507,7 @@ Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3
 </div>
 </section>
 <section id="eksplorasi-awal-distribusi-kelas">
-<h1>Eksplorasi Awal &amp; Distribusi Kelas<a class="headerlink" href="#eksplorasi-awal-distribusi-kelas" title="Link to this heading">#</a></h1>
+<h2>Eksplorasi Awal &amp; Distribusi Kelas<a class="headerlink" href="#eksplorasi-awal-distribusi-kelas" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Distribusi kelas asli:&quot;</span><span class="p">,</span> <span class="n">Counter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">]))</span>
@@ -555,7 +522,7 @@ Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3
 </div>
 </section>
 <section id="persiapan-data">
-<h1>Persiapan Data<a class="headerlink" href="#persiapan-data" title="Link to this heading">#</a></h1>
+<h2>Persiapan Data<a class="headerlink" href="#persiapan-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_features</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;sequence_name&quot;</span><span class="p">,</span> <span class="s2">&quot;class&quot;</span><span class="p">])</span>
@@ -600,14 +567,14 @@ Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3
 Shape y: (336,)
 </pre></div>
 </div>
-<img alt="_images/eb90aef0bf2ca11af559eb0e7061b4cb02116e5c576b73d7bb3f876f38d0bf1c.png" src="_images/eb90aef0bf2ca11af559eb0e7061b4cb02116e5c576b73d7bb3f876f38d0bf1c.png" />
+<img alt="_images/5145699ed1885e903370d28532dd398b8bfff3c3542b8d23f95defcf944121ca.png" src="_images/5145699ed1885e903370d28532dd398b8bfff3c3542b8d23f95defcf944121ca.png" />
 </div>
 </div>
 </section>
 <section id="eksperimen-1-data-belum-diseimbangkan">
-<h1>1. <strong>Eksperimen 1 – Data Belum Diseimbangkan</strong><a class="headerlink" href="#eksperimen-1-data-belum-diseimbangkan" title="Link to this heading">#</a></h1>
+<h2>1. <strong>Eksperimen 1 – Data Belum Diseimbangkan</strong><a class="headerlink" href="#eksperimen-1-data-belum-diseimbangkan" title="Link to this heading">#</a></h2>
 <section id="naive-bayes-data-belum-diseimbangkan">
-<h2><strong>Naive Bayes – Data Belum Diseimbangkan</strong><a class="headerlink" href="#naive-bayes-data-belum-diseimbangkan" title="Link to this heading">#</a></h2>
+<h3><strong>Naive Bayes – Data Belum Diseimbangkan</strong><a class="headerlink" href="#naive-bayes-data-belum-diseimbangkan" title="Link to this heading">#</a></h3>
 <p>Pada tahap ini, kita menggunakan <strong>Naive Bayes (GaussianNB)</strong> untuk melakukan klasifikasi pada dataset asli <em>tanpa penyeimbangan kelas</em>.<br />
 Langkah-langkah:</p>
 <ol class="arabic simple">
@@ -669,7 +636,7 @@ Confusion Matrix:
 </div>
 </section>
 <section id="random-forest-data-belum-diseimbangkan">
-<h2><strong>Random Forest – Data Belum Diseimbangkan</strong><a class="headerlink" href="#random-forest-data-belum-diseimbangkan" title="Link to this heading">#</a></h2>
+<h3><strong>Random Forest – Data Belum Diseimbangkan</strong><a class="headerlink" href="#random-forest-data-belum-diseimbangkan" title="Link to this heading">#</a></h3>
 <p>Pada tahap ini, kita menggunakan <strong>Random Forest Classifier</strong> untuk melakukan klasifikasi pada dataset asli <em>tanpa penyeimbangan kelas</em>.<br />
 Langkah-langkah:</p>
 <ol class="arabic simple">
@@ -735,7 +702,7 @@ Confusion Matrix:
 </div>
 </section>
 <section id="bagging-classifier-data-belum-diseimbangkan">
-<h2><strong>Bagging Classifier – Data Belum Diseimbangkan</strong><a class="headerlink" href="#bagging-classifier-data-belum-diseimbangkan" title="Link to this heading">#</a></h2>
+<h3><strong>Bagging Classifier – Data Belum Diseimbangkan</strong><a class="headerlink" href="#bagging-classifier-data-belum-diseimbangkan" title="Link to this heading">#</a></h3>
 <p>Pada tahap ini, kita menggunakan <strong>Bagging Classifier</strong> untuk melakukan klasifikasi pada dataset asli <em>tanpa penyeimbangan kelas</em>.<br />
 Bagging akan dilatih dengan dua skenario:</p>
 <ol class="arabic simple">
@@ -749,7 +716,7 @@ Bagging akan dilatih dengan dua skenario:</p>
 <li><p>Evaluasi model menggunakan akurasi, classification report, dan confusion matrix.</p></li>
 </ol>
 <section id="bagging-dengan-naive-bayes">
-<h3>Bagging dengan Naive Bayes<a class="headerlink" href="#bagging-dengan-naive-bayes" title="Link to this heading">#</a></h3>
+<h4>Bagging dengan Naive Bayes<a class="headerlink" href="#bagging-dengan-naive-bayes" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Base estimator = Naive Bayes</span>
@@ -799,71 +766,71 @@ Confusion Matrix:
  [ 0  0  0  0  0 11]]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
 </pre></div>
 </div>
@@ -871,7 +838,7 @@ Confusion Matrix:
 </div>
 </section>
 <section id="bagging-dengan-decision-tree">
-<h3>Bagging dengan Decision Tree<a class="headerlink" href="#bagging-dengan-decision-tree" title="Link to this heading">#</a></h3>
+<h4>Bagging dengan Decision Tree<a class="headerlink" href="#bagging-dengan-decision-tree" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Base estimator = Decision Tree</span>
@@ -927,7 +894,7 @@ Confusion Matrix:
 </section>
 </section>
 <section id="eksperimen-2-data-seimbang-dengan-smote">
-<h1><strong>Eksperimen 2 – Data Seimbang dengan SMOTE</strong><a class="headerlink" href="#eksperimen-2-data-seimbang-dengan-smote" title="Link to this heading">#</a></h1>
+<h2><strong>Eksperimen 2 – Data Seimbang dengan SMOTE</strong><a class="headerlink" href="#eksperimen-2-data-seimbang-dengan-smote" title="Link to this heading">#</a></h2>
 <p>Pada eksperimen kedua, dataset yang sebelumnya tidak seimbang akan diseimbangkan menggunakan <strong>SMOTE (Synthetic Minority Oversampling Technique)</strong>.<br />
 SMOTE bekerja dengan cara membuat data sintetis baru untuk kelas minoritas berdasarkan interpolasi antar tetangga terdekat.</p>
 <p>Langkah-langkah:</p>
@@ -974,11 +941,11 @@ Distribusi sesudah SMOTE: Counter({&#39;im&#39;: 143, &#39;cp&#39;: 143, &#39;pp
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e0919804cd268ffa2c9d59ef452adc3b250f32c7d5b58b3441ea1e6ca7c70e78.png" src="_images/e0919804cd268ffa2c9d59ef452adc3b250f32c7d5b58b3441ea1e6ca7c70e78.png" />
+<img alt="_images/0c4f22bff6e45816f354d5fbd5b70956d81cfa0542bf72acc8b628a86d3dd905.png" src="_images/0c4f22bff6e45816f354d5fbd5b70956d81cfa0542bf72acc8b628a86d3dd905.png" />
 </div>
 </div>
 <section id="pca-dengan-smote">
-<h2>PCA dengan SMOTE<a class="headerlink" href="#pca-dengan-smote" title="Link to this heading">#</a></h2>
+<h3>PCA dengan SMOTE<a class="headerlink" href="#pca-dengan-smote" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">LabelEncoder</span>
@@ -1013,12 +980,12 @@ Distribusi sesudah SMOTE: Counter({&#39;im&#39;: 143, &#39;cp&#39;: 143, &#39;pp
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e99f8a2e2b21d24ed33e07f25250a8bbe54e19a041e3554ae0b6414cc9ff36b9.png" src="_images/e99f8a2e2b21d24ed33e07f25250a8bbe54e19a041e3554ae0b6414cc9ff36b9.png" />
+<img alt="_images/5731467ea6976a1e3238a1c23b992e41fcdf24bad26c1c4f087c4d96285d1942.png" src="_images/5731467ea6976a1e3238a1c23b992e41fcdf24bad26c1c4f087c4d96285d1942.png" />
 </div>
 </div>
 </section>
 <section id="naive-bayes-data-seimbang-smote">
-<h2><strong>Naive Bayes – Data Seimbang (SMOTE)</strong><a class="headerlink" href="#naive-bayes-data-seimbang-smote" title="Link to this heading">#</a></h2>
+<h3><strong>Naive Bayes – Data Seimbang (SMOTE)</strong><a class="headerlink" href="#naive-bayes-data-seimbang-smote" title="Link to this heading">#</a></h3>
 <p>Setelah dataset diseimbangkan menggunakan <strong>SMOTE</strong>, model <strong>Naive Bayes (GaussianNB)</strong> digunakan kembali untuk klasifikasi.<br />
 Langkah-langkah:</p>
 <ol class="arabic simple">
@@ -1084,7 +1051,7 @@ Confusion Matrix:
 </div>
 </section>
 <section id="random-forest-data-seimbang-smote">
-<h2><strong>Random Forest – Data Seimbang (SMOTE)</strong><a class="headerlink" href="#random-forest-data-seimbang-smote" title="Link to this heading">#</a></h2>
+<h3><strong>Random Forest – Data Seimbang (SMOTE)</strong><a class="headerlink" href="#random-forest-data-seimbang-smote" title="Link to this heading">#</a></h3>
 <p>Setelah dataset diseimbangkan menggunakan <strong>SMOTE</strong>, model <strong>Random Forest Classifier</strong> digunakan untuk klasifikasi.<br />
 Langkah-langkah:</p>
 <ol class="arabic simple">
@@ -1153,7 +1120,7 @@ Confusion Matrix:
 </div>
 </section>
 <section id="bagging-classifier-data-seimbang-smote">
-<h2><strong>Bagging Classifier – Data Seimbang (SMOTE)</strong><a class="headerlink" href="#bagging-classifier-data-seimbang-smote" title="Link to this heading">#</a></h2>
+<h3><strong>Bagging Classifier – Data Seimbang (SMOTE)</strong><a class="headerlink" href="#bagging-classifier-data-seimbang-smote" title="Link to this heading">#</a></h3>
 <p>Setelah dataset diseimbangkan menggunakan <strong>SMOTE</strong>, model <strong>Bagging Classifier</strong> digunakan untuk klasifikasi.<br />
 Dua skenario diuji:</p>
 <ol class="arabic simple">
@@ -1167,7 +1134,7 @@ Dua skenario diuji:</p>
 <li><p>Evaluasi performa model dengan data uji menggunakan akurasi, classification report, dan confusion matrix.</p></li>
 </ol>
 <section id="id1">
-<h3>Bagging dengan Naive Bayes<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h4>Bagging dengan Naive Bayes<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bagging dengan Naive Bayes</span>
@@ -1221,7 +1188,7 @@ Confusion Matrix:
 </div>
 </section>
 <section id="id2">
-<h3>Bagging dengan Decision Tree<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<h4>Bagging dengan Decision Tree<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bagging dengan Decision Tree</span>
@@ -1277,7 +1244,7 @@ Confusion Matrix:
 </section>
 </section>
 <section id="eksperimen-3-adasyn">
-<h1><strong>3. Eksperimen 3 – ADASYN</strong><a class="headerlink" href="#eksperimen-3-adasyn" title="Link to this heading">#</a></h1>
+<h2><strong>3. Eksperimen 3 – ADASYN</strong><a class="headerlink" href="#eksperimen-3-adasyn" title="Link to this heading">#</a></h2>
 <p>Pada eksperimen ini digunakan teknik <strong>ADASYN (Adaptive Synthetic Sampling)</strong> untuk menyeimbangkan data.<br />
 Langkah-langkah:</p>
 <ol class="arabic simple">
@@ -1361,11 +1328,11 @@ Data yang ditambahkan: 823
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/3512141006d8ee12a356471cc5c0ddb3dcfa52d2ae0122b590c9ac3d564420b2.png" src="_images/3512141006d8ee12a356471cc5c0ddb3dcfa52d2ae0122b590c9ac3d564420b2.png" />
+<img alt="_images/c24ff2434fd329999d4deb703ad6251cf230052c5323358f6c146cf767a2338d.png" src="_images/c24ff2434fd329999d4deb703ad6251cf230052c5323358f6c146cf767a2338d.png" />
 </div>
 </div>
 <section id="pca-sesudah-adasyn">
-<h2>PCA sesudah ADASYN<a class="headerlink" href="#pca-sesudah-adasyn" title="Link to this heading">#</a></h2>
+<h3>PCA sesudah ADASYN<a class="headerlink" href="#pca-sesudah-adasyn" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Encode label kategori (supaya bisa diberi warna)</span>
@@ -1395,12 +1362,12 @@ Data yang ditambahkan: 823
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a8b75c8947d698a99be12dac4c134c3141b6063ca3aaf44515db909558d8973c.png" src="_images/a8b75c8947d698a99be12dac4c134c3141b6063ca3aaf44515db909558d8973c.png" />
+<img alt="_images/b9789eadc809eaccd767706e8baa37dabe2acb5e48bbac6e150edcf6834c4d47.png" src="_images/b9789eadc809eaccd767706e8baa37dabe2acb5e48bbac6e150edcf6834c4d47.png" />
 </div>
 </div>
 </section>
 <section id="naive-bayes-data-seimbang-adasyn">
-<h2><strong>Naive Bayes – Data Seimbang (ADASYN)</strong><a class="headerlink" href="#naive-bayes-data-seimbang-adasyn" title="Link to this heading">#</a></h2>
+<h3><strong>Naive Bayes – Data Seimbang (ADASYN)</strong><a class="headerlink" href="#naive-bayes-data-seimbang-adasyn" title="Link to this heading">#</a></h3>
 <p>Setelah dataset diseimbangkan menggunakan <strong>ADASYN</strong>, model <strong>Naive Bayes (GaussianNB)</strong> digunakan untuk klasifikasi.<br />
 Langkah-langkah:</p>
 <ol class="arabic simple">
@@ -1466,7 +1433,7 @@ Confusion Matrix:
 </div>
 </section>
 <section id="random-forest-data-seimbang-adasyn">
-<h2><strong>Random Forest – Data Seimbang (ADASYN)</strong><a class="headerlink" href="#random-forest-data-seimbang-adasyn" title="Link to this heading">#</a></h2>
+<h3><strong>Random Forest – Data Seimbang (ADASYN)</strong><a class="headerlink" href="#random-forest-data-seimbang-adasyn" title="Link to this heading">#</a></h3>
 <p>Setelah dataset diseimbangkan menggunakan <strong>ADASYN</strong>, model <strong>Random Forest</strong> digunakan untuk klasifikasi.<br />
 Langkah-langkah:</p>
 <ol class="arabic simple">
@@ -1535,7 +1502,7 @@ Confusion Matrix:
 </div>
 </section>
 <section id="bagging-classifier-data-seimbang-adasyn">
-<h2><strong>Bagging Classifier – Data Seimbang (ADASYN)</strong><a class="headerlink" href="#bagging-classifier-data-seimbang-adasyn" title="Link to this heading">#</a></h2>
+<h3><strong>Bagging Classifier – Data Seimbang (ADASYN)</strong><a class="headerlink" href="#bagging-classifier-data-seimbang-adasyn" title="Link to this heading">#</a></h3>
 <p>Setelah dataset diseimbangkan menggunakan <strong>ADASYN</strong>, model <strong>Bagging Classifier</strong> digunakan untuk klasifikasi.<br />
 Dua skenario diuji:</p>
 <ol class="arabic simple">
@@ -1549,7 +1516,7 @@ Dua skenario diuji:</p>
 <li><p>Evaluasi performa model dengan data uji menggunakan akurasi, classification report, dan confusion matrix.</p></li>
 </ol>
 <section id="id3">
-<h3>Bagging dengan Naive Bayes<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<h4>Bagging dengan Naive Bayes<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bagging dengan Naive Bayes</span>
@@ -1603,7 +1570,7 @@ Confusion Matrix:
 </div>
 </section>
 <section id="id4">
-<h3>Bagging dengan Decision Tree<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<h4>Bagging dengan Decision Tree<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bagging dengan Decision Tree</span>
@@ -1659,7 +1626,7 @@ Confusion Matrix:
 </section>
 </section>
 <section id="perbandingan-hasil-klasifikasi-data-asli-vs-smote-vs-adasyn">
-<h1>Perbandingan Hasil Klasifikasi – Data Asli vs SMOTE vs ADASYN<a class="headerlink" href="#perbandingan-hasil-klasifikasi-data-asli-vs-smote-vs-adasyn" title="Link to this heading">#</a></h1>
+<h2>Perbandingan Hasil Klasifikasi – Data Asli vs SMOTE vs ADASYN<a class="headerlink" href="#perbandingan-hasil-klasifikasi-data-asli-vs-smote-vs-adasyn" title="Link to this heading">#</a></h2>
 <p>Tabel berikut membandingkan performa model <strong>Naive Bayes, Random Forest, dan Bagging</strong> pada tiga kondisi data:</p>
 <ul class="simple">
 <li><p><strong>Asli (belum diseimbangkan)</strong></p></li>
@@ -1730,77 +1697,75 @@ Confusion Matrix:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
-/usr/local/lib/python3.12/dist-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/naive_bayes.py:512: RuntimeWarning: divide by zero encountered in log
   jointi = np.log(self.class_prior_[i])
 </pre></div>
 </div>
-<div class="output text_html">
-  <div id="df-abd5a697-478e-460b-810e-cccc65987313" class="colab-df-container">
-    <div>
+<div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -1883,273 +1848,9 @@ Confusion Matrix:
     </tr>
   </tbody>
 </table>
+</div></div></div>
 </div>
-    <div class="colab-df-buttons">
-
-  <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-abd5a697-478e-460b-810e-cccc65987313')"
-            title="Convert this dataframe to an interactive table."
-            style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960">
-    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"/>
-  </svg>
-    </button>
-
-  <style>
-    .colab-df-container {
-      display:flex;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    .colab-df-buttons div {
-      margin-bottom: 4px;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-    <script>
-      const buttonEl =
-        document.querySelector('#df-abd5a697-478e-460b-810e-cccc65987313 button.colab-df-convert');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      async function convertToInteractive(key) {
-        const element = document.querySelector('#df-abd5a697-478e-460b-810e-cccc65987313');
-        const dataTable =
-          await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                    [key], {});
-        if (!dataTable) return;
-
-        const docLinkHtml = 'Like what you see? Visit the ' +
-          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-          + ' to learn more about interactive tables.';
-        element.innerHTML = '';
-        dataTable['output_type'] = 'display_data';
-        await google.colab.output.renderOutput(dataTable, element);
-        const docLink = document.createElement('div');
-        docLink.innerHTML = docLinkHtml;
-        element.appendChild(docLink);
-      }
-    </script>
-  </div>
-
-
-    <div id="df-dabe3153-c19f-4511-ba3e-a8247c30746f">
-      <button class="colab-df-quickchart" onclick="quickchart('df-dabe3153-c19f-4511-ba3e-a8247c30746f')"
-                title="Suggest charts"
-                style="display:none;">
-
-<svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-     width="24px">
-    <g>
-        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
-    </g>
-</svg>
-      </button>
-
-<style>
-  .colab-df-quickchart {
-      --bg-color: #E8F0FE;
-      --fill-color: #1967D2;
-      --hover-bg-color: #E2EBFA;
-      --hover-fill-color: #174EA6;
-      --disabled-fill-color: #AAA;
-      --disabled-bg-color: #DDD;
-  }
-
-  [theme=dark] .colab-df-quickchart {
-      --bg-color: #3B4455;
-      --fill-color: #D2E3FC;
-      --hover-bg-color: #434B5C;
-      --hover-fill-color: #FFFFFF;
-      --disabled-bg-color: #3B4455;
-      --disabled-fill-color: #666;
-  }
-
-  .colab-df-quickchart {
-    background-color: var(--bg-color);
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    fill: var(--fill-color);
-    height: 32px;
-    padding: 0;
-    width: 32px;
-  }
-
-  .colab-df-quickchart:hover {
-    background-color: var(--hover-bg-color);
-    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
-    fill: var(--button-hover-fill-color);
-  }
-
-  .colab-df-quickchart-complete:disabled,
-  .colab-df-quickchart-complete:disabled:hover {
-    background-color: var(--disabled-bg-color);
-    fill: var(--disabled-fill-color);
-    box-shadow: none;
-  }
-
-  .colab-df-spinner {
-    border: 2px solid var(--fill-color);
-    border-color: transparent;
-    border-bottom-color: var(--fill-color);
-    animation:
-      spin 1s steps(1) infinite;
-  }
-
-  @keyframes spin {
-    0% {
-      border-color: transparent;
-      border-bottom-color: var(--fill-color);
-      border-left-color: var(--fill-color);
-    }
-    20% {
-      border-color: transparent;
-      border-left-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-    }
-    30% {
-      border-color: transparent;
-      border-left-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-      border-right-color: var(--fill-color);
-    }
-    40% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-      border-top-color: var(--fill-color);
-    }
-    60% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-    }
-    80% {
-      border-color: transparent;
-      border-right-color: var(--fill-color);
-      border-bottom-color: var(--fill-color);
-    }
-    90% {
-      border-color: transparent;
-      border-bottom-color: var(--fill-color);
-    }
-  }
-</style>
-
-      <script>
-        async function quickchart(key) {
-          const quickchartButtonEl =
-            document.querySelector('#' + key + ' button');
-          quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
-          quickchartButtonEl.classList.add('colab-df-spinner');
-          try {
-            const charts = await google.colab.kernel.invokeFunction(
-                'suggestCharts', [key], {});
-          } catch (error) {
-            console.error('Error during call to suggestCharts:', error);
-          }
-          quickchartButtonEl.classList.remove('colab-df-spinner');
-          quickchartButtonEl.classList.add('colab-df-quickchart-complete');
-        }
-        (() => {
-          let quickchartButtonEl =
-            document.querySelector('#df-dabe3153-c19f-4511-ba3e-a8247c30746f button');
-          quickchartButtonEl.style.display =
-            google.colab.kernel.accessAllowed ? 'block' : 'none';
-        })();
-      </script>
-    </div>
-
-  <div id="id_00dffbac-05df-47cf-ad77-87f9aa5bdcad">
-    <style>
-      .colab-df-generate {
-        background-color: #E8F0FE;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        display: none;
-        fill: #1967D2;
-        height: 32px;
-        padding: 0 0 0 0;
-        width: 32px;
-      }
-
-      .colab-df-generate:hover {
-        background-color: #E2EBFA;
-        box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-        fill: #174EA6;
-      }
-
-      [theme=dark] .colab-df-generate {
-        background-color: #3B4455;
-        fill: #D2E3FC;
-      }
-
-      [theme=dark] .colab-df-generate:hover {
-        background-color: #434B5C;
-        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-        filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-        fill: #FFFFFF;
-      }
-    </style>
-    <button class="colab-df-generate" onclick="generateWithVariable('df_results_pivot')"
-            title="Generate code using this dataframe."
-            style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-       width="24px">
-    <path d="M7,19H8.4L18.45,9,17,7.55,7,17.6ZM5,21V16.75L18.45,3.32a2,2,0,0,1,2.83,0l1.4,1.43a1.91,1.91,0,0,1,.58,1.4,1.91,1.91,0,0,1-.58,1.4L9.25,21ZM18.45,9,17,7.55Zm-12,3A5.31,5.31,0,0,0,4.9,8.1,5.31,5.31,0,0,0,1,6.5,5.31,5.31,0,0,0,4.9,4.9,5.31,5.31,0,0,0,6.5,1,5.31,5.31,0,0,0,8.1,4.9,5.31,5.31,0,0,0,12,6.5,5.46,5.46,0,0,0,6.5,12Z"/>
-  </svg>
-    </button>
-    <script>
-      (() => {
-      const buttonEl =
-        document.querySelector('#id_00dffbac-05df-47cf-ad77-87f9aa5bdcad button.colab-df-generate');
-      buttonEl.style.display =
-        google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-      buttonEl.onclick = () => {
-        google.colab.notebook.generateWithVariable('df_results_pivot');
-      }
-      })();
-    </script>
-  </div>
-
-    </div>
-  </div>
-</div></div>
-</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -2207,44 +1908,43 @@ Confusion Matrix:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Import Library</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-awal-distribusi-kelas">Eksplorasi Awal &amp; Distribusi Kelas</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#persiapan-data">Persiapan Data</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eksperimen-1-data-belum-diseimbangkan">1. <strong>Eksperimen 1 – Data Belum Diseimbangkan</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes-data-belum-diseimbangkan"><strong>Naive Bayes – Data Belum Diseimbangkan</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest-data-belum-diseimbangkan"><strong>Random Forest – Data Belum Diseimbangkan</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging-classifier-data-belum-diseimbangkan"><strong>Bagging Classifier – Data Belum Diseimbangkan</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging-dengan-naive-bayes">Bagging dengan Naive Bayes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging-dengan-decision-tree">Bagging dengan Decision Tree</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">Import Library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-awal-distribusi-kelas">Eksplorasi Awal &amp; Distribusi Kelas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persiapan-data">Persiapan Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksperimen-1-data-belum-diseimbangkan">1. <strong>Eksperimen 1 – Data Belum Diseimbangkan</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes-data-belum-diseimbangkan"><strong>Naive Bayes – Data Belum Diseimbangkan</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest-data-belum-diseimbangkan"><strong>Random Forest – Data Belum Diseimbangkan</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging-classifier-data-belum-diseimbangkan"><strong>Bagging Classifier – Data Belum Diseimbangkan</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging-dengan-naive-bayes">Bagging dengan Naive Bayes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging-dengan-decision-tree">Bagging dengan Decision Tree</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eksperimen-2-data-seimbang-dengan-smote"><strong>Eksperimen 2 – Data Seimbang dengan SMOTE</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-dengan-smote">PCA dengan SMOTE</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes-data-seimbang-smote"><strong>Naive Bayes – Data Seimbang (SMOTE)</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest-data-seimbang-smote"><strong>Random Forest – Data Seimbang (SMOTE)</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging-classifier-data-seimbang-smote"><strong>Bagging Classifier – Data Seimbang (SMOTE)</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Bagging dengan Naive Bayes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Bagging dengan Decision Tree</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksperimen-2-data-seimbang-dengan-smote"><strong>Eksperimen 2 – Data Seimbang dengan SMOTE</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-dengan-smote">PCA dengan SMOTE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes-data-seimbang-smote"><strong>Naive Bayes – Data Seimbang (SMOTE)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest-data-seimbang-smote"><strong>Random Forest – Data Seimbang (SMOTE)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging-classifier-data-seimbang-smote"><strong>Bagging Classifier – Data Seimbang (SMOTE)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Bagging dengan Naive Bayes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Bagging dengan Decision Tree</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#eksperimen-3-adasyn"><strong>3. Eksperimen 3 – ADASYN</strong></a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-sesudah-adasyn">PCA sesudah ADASYN</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes-data-seimbang-adasyn"><strong>Naive Bayes – Data Seimbang (ADASYN)</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest-data-seimbang-adasyn"><strong>Random Forest – Data Seimbang (ADASYN)</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging-classifier-data-seimbang-adasyn"><strong>Bagging Classifier – Data Seimbang (ADASYN)</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Bagging dengan Naive Bayes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Bagging dengan Decision Tree</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksperimen-3-adasyn"><strong>3. Eksperimen 3 – ADASYN</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-sesudah-adasyn">PCA sesudah ADASYN</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes-data-seimbang-adasyn"><strong>Naive Bayes – Data Seimbang (ADASYN)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest-data-seimbang-adasyn"><strong>Random Forest – Data Seimbang (ADASYN)</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging-classifier-data-seimbang-adasyn"><strong>Bagging Classifier – Data Seimbang (ADASYN)</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Bagging dengan Naive Bayes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Bagging dengan Decision Tree</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-hasil-klasifikasi-data-asli-vs-smote-vs-adasyn">Perbandingan Hasil Klasifikasi – Data Asli vs SMOTE vs ADASYN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#perbandingan-hasil-klasifikasi-data-asli-vs-smote-vs-adasyn">Perbandingan Hasil Klasifikasi – Data Asli vs SMOTE vs ADASYN</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
