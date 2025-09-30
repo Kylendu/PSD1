@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Profil Mahasiswa &#8212; My sample book</title>
+    <title>Business Understanding – Prediksi Risiko Penyakit Jantung dan Pembuluh Darah &#8212; My sample book</title>
   
   
   
@@ -57,10 +57,9 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Business_Understanding';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Business Understanding" href="Business_Understanding_iris.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -143,7 +142,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -168,8 +167,8 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Profil Mahasiswa
                 </a>
             </li>
@@ -255,7 +254,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FBusiness_Understanding.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -285,7 +284,7 @@
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/Business_Understanding.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -295,7 +294,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -369,7 +368,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Profil Mahasiswa</h1>
+    <h1>Business Understanding – Prediksi Risiko Penyakit Jantung dan Pembuluh Darah</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -379,8 +378,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biodata">Biodata</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tentang-saya">Tentang Saya</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latar-belakang-masalah">1. Latar Belakang Masalah</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-bisnis-penelitian">2. Tujuan Bisnis / Penelitian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#permasalahan-utama">3. Permasalahan Utama</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dampak-yang-diharapkan">4. Dampak yang Diharapkan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-analitis-data-science-goal">5. Tujuan Analitis (Data Science Goal)</a></li>
 </ul>
             </nav>
         </div>
@@ -392,39 +394,51 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="profil-mahasiswa">
-<h1>Profil Mahasiswa<a class="headerlink" href="#profil-mahasiswa" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="business-understanding-prediksi-risiko-penyakit-jantung-dan-pembuluh-darah">
+<h1>Business Understanding – Prediksi Risiko Penyakit Jantung dan Pembuluh Darah<a class="headerlink" href="#business-understanding-prediksi-risiko-penyakit-jantung-dan-pembuluh-darah" title="Link to this heading">#</a></h1>
+<section id="latar-belakang-masalah">
+<h2>1. Latar Belakang Masalah<a class="headerlink" href="#latar-belakang-masalah" title="Link to this heading">#</a></h2>
+<p>Penyakit jantung dan pembuluh darah merupakan salah satu penyebab kematian tertinggi di dunia.<br />
+Faktor gaya hidup seperti pola makan, aktivitas fisik, konsumsi alkohol, kebiasaan merokok, dan riwayat kesehatan individu memiliki pengaruh besar terhadap risiko penyakit ini.<br />
+Analisis berbasis data dapat membantu mengidentifikasi pola risiko sejak dini, sehingga pencegahan dapat dilakukan lebih efektif.</p>
+</section>
 <hr class="docutils" />
-<section id="biodata">
-<h2>Biodata<a class="headerlink" href="#biodata" title="Link to this heading">#</a></h2>
+<section id="tujuan-bisnis-penelitian">
+<h2>2. Tujuan Bisnis / Penelitian<a class="headerlink" href="#tujuan-bisnis-penelitian" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Nama:</strong> Rizal Fadillah</p></li>
-<li><p><strong>NIM:</strong> 230411100009</p></li>
-<li><p><strong>Email:</strong> <a class="reference external" href="mailto:rizal&#46;lavial199&#37;&#52;&#48;gmail&#46;com">rizal<span>&#46;</span>lavial199<span>&#64;</span>gmail<span>&#46;</span>com</a></p></li>
-<li><p><strong>Universitas:</strong> Universitas Trunojoyo Madura</p></li>
-<li><p><strong>Fakultas:</strong> Teknik</p></li>
-<li><p><strong>Program Studi:</strong> Teknik Informatika</p></li>
-<li><p><strong>Kelas:</strong> Proyek Sains Data B</p></li>
+<li><p>Memprediksi risiko penyakit jantung dan pembuluh darah berdasarkan data gaya hidup, demografi, dan riwayat kesehatan individu.</p></li>
+<li><p>Memberikan wawasan kepada masyarakat dan tenaga medis untuk mencegah penyakit melalui rekomendasi personalisasi gaya hidup sehat.</p></li>
+<li><p>Mendukung program kesehatan masyarakat untuk memprioritaskan kelompok berisiko tinggi.</p></li>
 </ul>
 </section>
 <hr class="docutils" />
-<section id="tentang-saya">
-<h2>Tentang Saya<a class="headerlink" href="#tentang-saya" title="Link to this heading">#</a></h2>
-<p>Saya adalah mahasiswa Teknik Informatika Universitas Trunojoyo Madura dengan ketertarikan pada pengembangan teknologi, data science, dan pemrograman. Saat ini saya mengikuti kelas <em>Proyek Sains Data B</em> untuk memperdalam keterampilan analisis data dan pengembangan proyek berbasis data.</p>
-<hr class="docutils" />
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Business_Understanding_iris.html">Business Understanding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Data_Understanding_iris.html">Data Understanding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Klasifikasi%26perbandingan.html">Import Library</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Klasifikasi%26perbandingan.html#eksplorasi-awal-distribusi-kelas">Eksplorasi Awal &amp; Distribusi Kelas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Klasifikasi%26perbandingan.html#persiapan-data">Persiapan Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Klasifikasi%26perbandingan.html#eksperimen-1-data-belum-diseimbangkan">1. <strong>Eksperimen 1 – Data Belum Diseimbangkan</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Klasifikasi%26perbandingan.html#eksperimen-2-data-seimbang-dengan-smote"><strong>Eksperimen 2 – Data Seimbang dengan SMOTE</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Klasifikasi%26perbandingan.html#eksperimen-3-adasyn"><strong>3. Eksperimen 3 – ADASYN</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Klasifikasi%26perbandingan.html#perbandingan-hasil-klasifikasi-data-asli-vs-smote-vs-adasyn">Perbandingan Hasil Klasifikasi – Data Asli vs SMOTE vs ADASYN</a></li>
+<section id="permasalahan-utama">
+<h2>3. Permasalahan Utama<a class="headerlink" href="#permasalahan-utama" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Deteksi dini penyakit jantung masih kurang optimal karena keterbatasan pemeriksaan rutin.</p></li>
+<li><p>Banyak individu tidak menyadari bahwa gaya hidup sehari-hari meningkatkan risiko penyakit jantung.</p></li>
+<li><p>Tenaga medis membutuhkan cara efisien untuk mengidentifikasi kelompok masyarakat berisiko tinggi secara cepat dan akurat.</p></li>
 </ul>
-</div>
+</section>
+<hr class="docutils" />
+<section id="dampak-yang-diharapkan">
+<h2>4. Dampak yang Diharapkan<a class="headerlink" href="#dampak-yang-diharapkan" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Meningkatkan kesadaran masyarakat tentang pentingnya pemeriksaan kesehatan dan gaya hidup sehat.</p></li>
+<li><p>Memungkinkan intervensi kesehatan lebih cepat dan terarah bagi kelompok berisiko.</p></li>
+<li><p>Memberikan dasar ilmiah untuk kampanye kesehatan dan kebijakan publik terkait pencegahan penyakit kardiovaskular.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="tujuan-analitis-data-science-goal">
+<h2>5. Tujuan Analitis (Data Science Goal)<a class="headerlink" href="#tujuan-analitis-data-science-goal" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Melakukan analisis eksplorasi data untuk memahami hubungan faktor gaya hidup (merokok, konsumsi alkohol, pola makan, olahraga) dengan risiko penyakit jantung.</p></li>
+<li><p>Mengembangkan model prediksi (klasifikasi) untuk mengidentifikasi individu dengan risiko tinggi penyakit jantung dan pembuluh darah.</p></li>
+<li><p>Mengukur kontribusi masing-masing faktor (feature importance) untuk memahami variabel yang paling berpengaruh.</p></li>
+<li><p>Memberikan rekomendasi berbasis data untuk langkah pencegahan.</p></li>
+</ul>
+<hr class="docutils" />
 </section>
 </section>
 
@@ -458,15 +472,6 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="right-next"
-       href="Business_Understanding_iris.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Business Understanding</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -483,8 +488,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biodata">Biodata</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tentang-saya">Tentang Saya</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latar-belakang-masalah">1. Latar Belakang Masalah</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-bisnis-penelitian">2. Tujuan Bisnis / Penelitian</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#permasalahan-utama">3. Permasalahan Utama</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dampak-yang-diharapkan">4. Dampak yang Diharapkan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tujuan-analitis-data-science-goal">5. Tujuan Analitis (Data Science Goal)</a></li>
 </ul>
   </nav></div>
 

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Profil Mahasiswa &#8212; My sample book</title>
+    <title>Data Understanding &#8212; My sample book</title>
   
   
   
@@ -57,10 +57,9 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Data_Understanding';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Business Understanding" href="Business_Understanding_iris.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -143,7 +142,7 @@
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -168,8 +167,8 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Profil Mahasiswa
                 </a>
             </li>
@@ -255,7 +254,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FData_Understanding.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -285,7 +284,7 @@
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/Data_Understanding.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -295,7 +294,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -369,7 +368,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Profil Mahasiswa</h1>
+    <h1>Data Understanding</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -379,8 +378,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biodata">Biodata</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tentang-saya">Tentang Saya</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-dataset">Ringkasan Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-variabel">Deskripsi Variabel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#karakteristik-data">Karakteristik Data</a></li>
 </ul>
             </nav>
         </div>
@@ -392,39 +392,95 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="profil-mahasiswa">
-<h1>Profil Mahasiswa<a class="headerlink" href="#profil-mahasiswa" title="Link to this heading">#</a></h1>
-<hr class="docutils" />
-<section id="biodata">
-<h2>Biodata<a class="headerlink" href="#biodata" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="data-understanding">
+<h1>Data Understanding<a class="headerlink" href="#data-understanding" title="Link to this heading">#</a></h1>
+<p>Dataset ini berfokus pada faktor gaya hidup dan riwayat kesehatan untuk memprediksi risiko penyakit jantung dan pembuluh darah. Dataset berisi informasi demografi, kebiasaan gaya hidup, riwayat kesehatan, dan hasil pemeriksaan medis sederhana.</p>
+<section id="ringkasan-dataset">
+<h2>Ringkasan Dataset<a class="headerlink" href="#ringkasan-dataset" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Nama:</strong> Rizal Fadillah</p></li>
-<li><p><strong>NIM:</strong> 230411100009</p></li>
-<li><p><strong>Email:</strong> <a class="reference external" href="mailto:rizal&#46;lavial199&#37;&#52;&#48;gmail&#46;com">rizal<span>&#46;</span>lavial199<span>&#64;</span>gmail<span>&#46;</span>com</a></p></li>
-<li><p><strong>Universitas:</strong> Universitas Trunojoyo Madura</p></li>
-<li><p><strong>Fakultas:</strong> Teknik</p></li>
-<li><p><strong>Program Studi:</strong> Teknik Informatika</p></li>
-<li><p><strong>Kelas:</strong> Proyek Sains Data B</p></li>
+<li><p>Jumlah Fitur: 19 kolom</p></li>
+<li><p>Tipe Data: Kombinasi kategorikal dan numerik</p></li>
+<li><p>Target Utama: <code class="docutils literal notranslate"><span class="pre">Heart_Disease</span></code> (Yes/No)</p></li>
 </ul>
 </section>
-<hr class="docutils" />
-<section id="tentang-saya">
-<h2>Tentang Saya<a class="headerlink" href="#tentang-saya" title="Link to this heading">#</a></h2>
-<p>Saya adalah mahasiswa Teknik Informatika Universitas Trunojoyo Madura dengan ketertarikan pada pengembangan teknologi, data science, dan pemrograman. Saat ini saya mengikuti kelas <em>Proyek Sains Data B</em> untuk memperdalam keterampilan analisis data dan pengembangan proyek berbasis data.</p>
-<hr class="docutils" />
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="Business_Understanding_iris.html">Business Understanding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Data_Understanding_iris.html">Data Understanding</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Klasifikasi%26perbandingan.html">Import Library</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Klasifikasi%26perbandingan.html#eksplorasi-awal-distribusi-kelas">Eksplorasi Awal &amp; Distribusi Kelas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Klasifikasi%26perbandingan.html#persiapan-data">Persiapan Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Klasifikasi%26perbandingan.html#eksperimen-1-data-belum-diseimbangkan">1. <strong>Eksperimen 1 – Data Belum Diseimbangkan</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Klasifikasi%26perbandingan.html#eksperimen-2-data-seimbang-dengan-smote"><strong>Eksperimen 2 – Data Seimbang dengan SMOTE</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Klasifikasi%26perbandingan.html#eksperimen-3-adasyn"><strong>3. Eksperimen 3 – ADASYN</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="Klasifikasi%26perbandingan.html#perbandingan-hasil-klasifikasi-data-asli-vs-smote-vs-adasyn">Perbandingan Hasil Klasifikasi – Data Asli vs SMOTE vs ADASYN</a></li>
-</ul>
+<section id="deskripsi-variabel">
+<h2>Deskripsi Variabel<a class="headerlink" href="#deskripsi-variabel" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Kolom</p></th>
+<th class="head"><p>Deskripsi</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>General_Health</strong></p></td>
+<td><p>Penilaian kesehatan secara umum oleh responden (Poor, Fair, Good, Very Good, Excellent).</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Checkup</strong></p></td>
+<td><p>Frekuensi pemeriksaan kesehatan (misalnya: Within the past year, Within the past 2 years).</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Exercise</strong></p></td>
+<td><p>Status aktivitas fisik rutin (Yes/No).</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Heart_Disease</strong></p></td>
+<td><p>Diagnosis penyakit jantung (Yes/No) – target prediksi.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Skin_Cancer</strong></p></td>
+<td><p>Riwayat kanker kulit (Yes/No).</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Other_Cancer</strong></p></td>
+<td><p>Riwayat kanker lain (Yes/No).</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Depression</strong></p></td>
+<td><p>Riwayat depresi (Yes/No).</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Diabetes</strong></p></td>
+<td><p>Status diabetes (Yes/No).</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Arthritis</strong></p></td>
+<td><p>Riwayat radang sendi (Yes/No).</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Sex</strong></p></td>
+<td><p>Jenis kelamin (Male/Female).</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Age_Category</strong></p></td>
+<td><p>Kategori umur responden (misalnya: 60-64, 70-74, 80+).</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Height_(cm)</strong></p></td>
+<td><p>Tinggi badan (dalam cm).</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Weight_(kg)</strong></p></td>
+<td><p>Berat badan (dalam kg).</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>BMI</strong></p></td>
+<td><p>Body Mass Index (BMI) responden, dihitung dari berat dan tinggi badan.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Smoking_History</strong></p></td>
+<td><p>Riwayat merokok (Yes/No).</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Alcohol_Consumption</strong></p></td>
+<td><p>Konsumsi alkohol rata-rata per bulan.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Fruit_Consumption</strong></p></td>
+<td><p>Konsumsi buah rata-rata per bulan.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Green_Vegetables_Consumption</strong></p></td>
+<td><p>Konsumsi sayuran hijau rata-rata per bulan.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>FriedPotato_Consumption</strong></p></td>
+<td><p>Konsumsi kentang goreng rata-rata per bulan.</p></td>
+</tr>
+</tbody>
+</table>
 </div>
+</section>
+<section id="karakteristik-data">
+<h2>Karakteristik Data<a class="headerlink" href="#karakteristik-data" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Kolom kategorikal: <code class="docutils literal notranslate"><span class="pre">General_Health</span></code>, <code class="docutils literal notranslate"><span class="pre">Checkup</span></code>, <code class="docutils literal notranslate"><span class="pre">Exercise</span></code>, <code class="docutils literal notranslate"><span class="pre">Heart_Disease</span></code>, <code class="docutils literal notranslate"><span class="pre">Skin_Cancer</span></code>, <code class="docutils literal notranslate"><span class="pre">Other_Cancer</span></code>, <code class="docutils literal notranslate"><span class="pre">Depression</span></code>, <code class="docutils literal notranslate"><span class="pre">Diabetes</span></code>, <code class="docutils literal notranslate"><span class="pre">Arthritis</span></code>, <code class="docutils literal notranslate"><span class="pre">Sex</span></code>, <code class="docutils literal notranslate"><span class="pre">Smoking_History</span></code>.</p></li>
+<li><p>Kolom numerik: <code class="docutils literal notranslate"><span class="pre">Height_(cm)</span></code>, <code class="docutils literal notranslate"><span class="pre">Weight_(kg)</span></code>, <code class="docutils literal notranslate"><span class="pre">BMI</span></code>, <code class="docutils literal notranslate"><span class="pre">Alcohol_Consumption</span></code>, <code class="docutils literal notranslate"><span class="pre">Fruit_Consumption</span></code>, <code class="docutils literal notranslate"><span class="pre">Green_Vegetables_Consumption</span></code>, <code class="docutils literal notranslate"><span class="pre">FriedPotato_Consumption</span></code>.</p></li>
+<li><p>Data konsumsi makanan dan alkohol (<code class="docutils literal notranslate"><span class="pre">Alcohol_Consumption</span></code>, <code class="docutils literal notranslate"><span class="pre">Fruit_Consumption</span></code>, dll.) kemungkinan dihitung dari <strong>self-report</strong> dengan survei, dinyatakan sebagai jumlah rata-rata konsumsi per bulan.</p></li>
+</ul>
+<hr class="docutils" />
 </section>
 </section>
 
@@ -458,15 +514,6 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="right-next"
-       href="Business_Understanding_iris.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Business Understanding</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -483,8 +530,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biodata">Biodata</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tentang-saya">Tentang Saya</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ringkasan-dataset">Ringkasan Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-variabel">Deskripsi Variabel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#karakteristik-data">Karakteristik Data</a></li>
 </ul>
   </nav></div>
 
