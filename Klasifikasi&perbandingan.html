@@ -61,7 +61,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Klasifikasi&perbandingan';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Data Understanding" href="Data_Understanding_iris.html" />
+    <link rel="prev" title="Preprocessing" href="preposesing.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -182,6 +182,7 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Business_Understanding_iris.html">Business Understanding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Data_Understanding_iris.html">Data Understanding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preposesing.html">Preprocessing</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Over-Sampling</a></li>
 </ul>
 
@@ -378,7 +379,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-machine-learning">Model Machine Learning</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">Import Library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pemanggilan-data-ecoli-dari-database-aiven">Pemanggilan data ecoli dari database Aiven</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-awal-distribusi-kelas">Eksplorasi Awal &amp; Distribusi Kelas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persiapan-data">Persiapan Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksperimen-1-data-belum-diseimbangkan">1. <strong>Eksperimen 1 – Data Belum Diseimbangkan</strong></a><ul class="nav section-nav flex-column">
@@ -391,7 +394,7 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksperimen-2-data-seimbang-dengan-smote"><strong>Eksperimen 2 – Data Seimbang dengan SMOTE</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksperimen-2-data-seimbang-dengan-smote"><strong>2. Eksperimen 2 – Data Seimbang dengan SMOTE</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-dengan-smote">PCA dengan SMOTE</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes-data-seimbang-smote"><strong>Naive Bayes – Data Seimbang (SMOTE)</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest-data-seimbang-smote"><strong>Random Forest – Data Seimbang (SMOTE)</strong></a></li>
@@ -427,6 +430,34 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="over-sampling">
 <h1>Over-Sampling<a class="headerlink" href="#over-sampling" title="Link to this heading">#</a></h1>
+<p>Oversampling adalah teknik yang digunakan untuk menangani ketidakseimbangan kelas (class imbalance) dalam dataset. Ketika salah satu kelas memiliki jumlah sampel jauh lebih sedikit dibanding kelas lain, model cenderung bias terhadap kelas mayoritas.</p>
+<section id="model-machine-learning">
+<h2>Model Machine Learning<a class="headerlink" href="#model-machine-learning" title="Link to this heading">#</a></h2>
+<p><strong>Naive Bayes</strong></p>
+<ul class="simple">
+<li><p>Algoritma probabilistik berbasis <strong>Teorema Bayes</strong>.</p></li>
+<li><p>Asumsi: fitur saling independen.</p></li>
+<li><p>Cepat, sederhana, cocok untuk data teks.</p></li>
+<li><p>Kurang akurat jika fitur saling bergantung.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Random Forest</strong></p>
+<ul class="simple">
+<li><p><strong>Ensemble</strong> dari banyak Decision Tree.</p></li>
+<li><p>Menggunakan <strong>bootstrap sampling</strong> + pemilihan fitur acak.</p></li>
+<li><p>Akurat, tahan <em>overfitting</em>, stabil.</p></li>
+<li><p>Lebih lambat, sulit diinterpretasi.</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Bagging Classifier</strong></p>
+<ul class="simple">
+<li><p><strong>Bagging Classifier</strong> adalah algoritma <em>ensemble learning</em> berbasis metode <strong>Bagging (Bootstrap Aggregating)</strong> untuk klasifikasi.<br />
+Prinsipnya: melatih beberapa model (biasanya Decision Tree) pada data subset acak, lalu hasil prediksi digabung dengan voting mayoritas.</p></li>
+<li><p>Melatih beberapa model pada subset data berbeda.</p></li>
+<li><p>Mengurangi <em>overfitting</em>, lebih stabil.</p></li>
+<li><p>Butuh komputasi lebih banyak.</p></li>
+</ul>
+</section>
 <section id="import-library">
 <h2>Import Library<a class="headerlink" href="#import-library" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -448,6 +479,9 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
+<section id="pemanggilan-data-ecoli-dari-database-aiven">
+<h2>Pemanggilan data ecoli dari database Aiven<a class="headerlink" href="#pemanggilan-data-ecoli-dari-database-aiven" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -499,7 +533,7 @@ document.write(`
 4    ACKA_ECOLI  0.59  0.49  0.48  0.5  0.52  0.45  0.36    cp
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_32899/2402679444.py:32: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_39407/2402679444.py:32: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
   df = pd.read_sql(query, conn)
 </pre></div>
 </div>
@@ -567,7 +601,7 @@ document.write(`
 Shape y: (336,)
 </pre></div>
 </div>
-<img alt="_images/5145699ed1885e903370d28532dd398b8bfff3c3542b8d23f95defcf944121ca.png" src="_images/5145699ed1885e903370d28532dd398b8bfff3c3542b8d23f95defcf944121ca.png" />
+<img alt="_images/08d75795316b9d3a6493f338233433a6f0aa2a364cb06ab4e1fb9ecaf4ee487e.png" src="_images/08d75795316b9d3a6493f338233433a6f0aa2a364cb06ab4e1fb9ecaf4ee487e.png" />
 </div>
 </div>
 </section>
@@ -894,7 +928,7 @@ Confusion Matrix:
 </section>
 </section>
 <section id="eksperimen-2-data-seimbang-dengan-smote">
-<h2><strong>Eksperimen 2 – Data Seimbang dengan SMOTE</strong><a class="headerlink" href="#eksperimen-2-data-seimbang-dengan-smote" title="Link to this heading">#</a></h2>
+<h2><strong>2. Eksperimen 2 – Data Seimbang dengan SMOTE</strong><a class="headerlink" href="#eksperimen-2-data-seimbang-dengan-smote" title="Link to this heading">#</a></h2>
 <p>Pada eksperimen kedua, dataset yang sebelumnya tidak seimbang akan diseimbangkan menggunakan <strong>SMOTE (Synthetic Minority Oversampling Technique)</strong>.<br />
 SMOTE bekerja dengan cara membuat data sintetis baru untuk kelas minoritas berdasarkan interpolasi antar tetangga terdekat.</p>
 <p>Langkah-langkah:</p>
@@ -1469,8 +1503,9 @@ Langkah-langkah:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🔹 Akurasi Random Forest (ADASYN): 0.9525862068965517
-
-Classification Report:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Classification Report:
                precision    recall  f1-score   support
 
           cp       0.88      1.00      0.94        29
@@ -1884,12 +1919,12 @@ Confusion Matrix:
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Data_Understanding_iris.html"
+       href="preposesing.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Data Understanding</p>
+        <p class="prev-next-title">Preprocessing</p>
       </div>
     </a>
 </div>
@@ -1908,7 +1943,9 @@ Confusion Matrix:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-machine-learning">Model Machine Learning</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">Import Library</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pemanggilan-data-ecoli-dari-database-aiven">Pemanggilan data ecoli dari database Aiven</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-awal-distribusi-kelas">Eksplorasi Awal &amp; Distribusi Kelas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#persiapan-data">Persiapan Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksperimen-1-data-belum-diseimbangkan">1. <strong>Eksperimen 1 – Data Belum Diseimbangkan</strong></a><ul class="nav section-nav flex-column">
@@ -1921,7 +1958,7 @@ Confusion Matrix:
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksperimen-2-data-seimbang-dengan-smote"><strong>Eksperimen 2 – Data Seimbang dengan SMOTE</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksperimen-2-data-seimbang-dengan-smote"><strong>2. Eksperimen 2 – Data Seimbang dengan SMOTE</strong></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pca-dengan-smote">PCA dengan SMOTE</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#naive-bayes-data-seimbang-smote"><strong>Naive Bayes – Data Seimbang (SMOTE)</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest-data-seimbang-smote"><strong>Random Forest – Data Seimbang (SMOTE)</strong></a></li>
