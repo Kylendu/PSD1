@@ -61,7 +61,6 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'IPYNB/timeseries';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Analisis Data Ecoli Menggunakan KNIME" href="KNIME.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,6 +123,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -179,14 +180,14 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Business_Understanding_iris.html">Business Understanding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Data_Understanding_iris.html">Data Understanding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="preposesing.html">Preprocessing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Klasifikasi%26perbandingan.html">Over-Sampling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="KNIME.html"><strong>Analisis Data Ecoli Menggunakan KNIME</strong></a></li>
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Time Series dataset for prediction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="timeseries2.html">Time Series Forecasting</a></li>
 </ul>
 
     </div>
@@ -484,18 +485,53 @@ Proses dikirim ke server dalam bentuk batch job, dan hasilnya disimpan dalam for
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Authenticated using refresh token.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0:00:00 Job &#39;j-2510241057484aabb613ff1616624ee2&#39;: send &#39;start&#39;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0:00:13 Job &#39;j-2510241057484aabb613ff1616624ee2&#39;: created (progress 0%)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0:00:18 Job &#39;j-2510241057484aabb613ff1616624ee2&#39;: created (progress 0%)
+</pre></div>
+</div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">openeo</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">connection</span> <span class="o">=</span> <span class="n">openeo</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;openeo.dataspace.copernicus.eu&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">authenticate_oidc</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">aoi</span> <span class="o">=</span> <span class="p">{</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Polygon&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>         <span class="s2">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>     <span class="mi">31</span>     <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Polygon&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="p">}</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">58</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span> <span class="c1"># 5. Hitung rata-rata spasial berdasarkan AOI</span>
+<span class="g g-Whitespace">     </span><span class="mi">53</span> <span class="n">s5p_no2_aoi</span> <span class="o">=</span> <span class="n">s5p_no2_daily</span><span class="o">.</span><span class="n">aggregate_spatial</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">54</span>     <span class="n">geometries</span><span class="o">=</span><span class="n">aoi</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span>     <span class="n">reducer</span><span class="o">=</span><span class="s2">&quot;mean&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span> <span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">58</span> <span class="n">job</span> <span class="o">=</span> <span class="n">s5p_no2</span><span class="o">.</span><span class="n">execute_batch</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;NO2 in bangkalan&quot;</span><span class="p">,</span> <span class="n">outputfile</span><span class="o">=</span><span class="s2">&quot;NO2_in_bangkalan.nc&quot;</span><span class="p">)</span>
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;openeo&#39;
+<span class="nn">File /usr/local/python/3.12.1/lib/python3.12/site-packages/openeo/rest/datacube.py:2703,</span> in <span class="ni">DataCube.execute_batch</span><span class="nt">(self, outputfile, out_format, title, description, plan, budget, print, max_poll_interval, connection_retry_interval, additional, job_options, validate, auto_add_save_result, show_error_logs, log_level, **format_options)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2690</span>     <span class="n">create_kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;auto_add_save_result&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+<span class="g g-Whitespace">   </span><span class="mi">2692</span> <span class="n">job</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">create_job</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2693</span>     <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2694</span>     <span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>   <span class="mi">2701</span>     <span class="o">**</span><span class="n">create_kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2702</span> <span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2703</span> <span class="n">job</span><span class="o">.</span><span class="n">start_and_wait</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2704</span>     <span class="nb">print</span><span class="o">=</span><span class="nb">print</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2705</span>     <span class="n">max_poll_interval</span><span class="o">=</span><span class="n">max_poll_interval</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2706</span>     <span class="n">connection_retry_interval</span><span class="o">=</span><span class="n">connection_retry_interval</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2707</span>     <span class="n">show_error_logs</span><span class="o">=</span><span class="n">show_error_logs</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2708</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2709</span> <span class="k">if</span> <span class="n">outputfile</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">2710</span>     <span class="n">job</span><span class="o">.</span><span class="n">download_result</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">outputfile</span><span class="p">)</span>
+
+<span class="nn">File /usr/local/python/3.12.1/lib/python3.12/site-packages/openeo/rest/job.py:371,</span> in <span class="ni">BatchJob.start_and_wait</span><span class="nt">(self, print, max_poll_interval, connection_retry_interval, soft_error_max, show_error_logs, require_success)</span>
+<span class="g g-Whitespace">    </span><span class="mi">368</span>         <span class="k">break</span>
+<span class="g g-Whitespace">    </span><span class="mi">370</span>     <span class="c1"># Sleep for next poll (and adaptively make polling less frequent)</span>
+<span class="ne">--&gt; </span><span class="mi">371</span>     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">poll_interval</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">372</span>     <span class="n">poll_interval</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mf">1.25</span> <span class="o">*</span> <span class="n">poll_interval</span><span class="p">,</span> <span class="n">max_poll_interval</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">374</span> <span class="k">if</span> <span class="n">require_success</span> <span class="ow">and</span> <span class="n">status</span> <span class="o">!=</span> <span class="s2">&quot;finished&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">375</span>     <span class="c1"># TODO: render logs jupyter-aware in a notebook context?</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -523,7 +559,7 @@ Untuk melihat apakah pembacaan data berhasil, kita tampilkan beberapa baris pert
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">netCDF4</span>
 
-<span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;costs/NO2_in_bangkalan.nc&quot;</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s2">&quot;/workspaces/PSD1/Tugas/data/NO2_in_bangkalan.nc&quot;</span>
 <span class="n">ds</span> <span class="o">=</span> <span class="n">netCDF4</span><span class="o">.</span><span class="n">Dataset</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
 
 <span class="c1"># Lihat seluruh variabel yang tersedia</span>
@@ -547,6 +583,125 @@ Untuk melihat apakah pembacaan data berhasil, kita tampilkan beberapa baris pert
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">📅 Contoh data pertama:&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">no2</span><span class="p">))):</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dates</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2"> | NO2: </span><span class="si">{</span><span class="n">no2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>📦 Variabel dalam file:
+dict_keys([&#39;t&#39;, &#39;x&#39;, &#39;y&#39;, &#39;crs&#39;, &#39;NO2&#39;])
+
+📅 Contoh data pertama:
+2023-10-15 00:00:00 | NO2: [[8.703253115527332e-06 2.2768768758396618e-05 1.935506224981509e-05
+  1.282344055653084e-05 2.098608274536673e-05 1.0306909643986728e-05]
+ [3.837998156086542e-05 3.345924778841436e-05 3.968797318520956e-05
+  1.6718955521355383e-05 2.098608274536673e-05 1.0306909643986728e-05]
+ [3.837998156086542e-05 3.345924778841436e-05 -- -- --
+  3.8814887375338e-05]
+ [-- -- -- -- -- --]
+ [-- -- -- -- -- --]
+ [-- -- -- -- -- --]]
+2023-10-16 00:00:00 | NO2: [[2.5831523089436814e-05 2.9338900276343338e-05 2.245478390250355e-05
+  1.3339020370040089e-05 3.163498695357703e-05 1.9736513422685675e-05]
+ [3.327479134895839e-05 3.0402106858673505e-05 2.4185537768062204e-05
+  1.3339020370040089e-05 4.056953912368044e-05 2.9090699172229506e-05]
+ [3.327479134895839e-05 3.6139572330284864e-05 3.601557546062395e-05 --
+  4.056953912368044e-05 1.0229899089608807e-05]
+ [2.077539284073282e-05 3.6139572330284864e-05 3.601557546062395e-05
+  1.76669691427378e-05 8.706816174708365e-07 1.0229899089608807e-05]
+ [3.772394484258257e-05 3.249692963436246e-05 1.8544929844210856e-05
+  1.76669691427378e-05 4.047392576467246e-05 2.6299343517166562e-05]
+ [3.772394484258257e-05 2.552667683630716e-05 3.3929084111150587e-06
+  1.999934647756163e-05 5.453194262372563e-06 1.744257315294817e-05]]
+2023-10-17 00:00:00 | NO2: [[2.8473370548454113e-05 2.5088236725423485e-05 3.367224780959077e-05
+  2.4819619284244254e-05 1.482843617850449e-05 2.4805451175780036e-05]
+ [4.42219570686575e-05 2.4864772058208473e-05 3.11443509417586e-05
+  2.4819619284244254e-05 2.7072288503404707e-05 2.84215511783259e-05]
+ [3.5716329875867814e-05 3.623020165832713e-05 3.6377467040438205e-05
+  3.1405161280417815e-05 2.3366281311609782e-05 2.484528704371769e-05]
+ [3.268197542638518e-05 3.676957203424536e-05 3.6377467040438205e-05
+  2.3175731257651933e-05 4.6565666707465425e-05 4.260035348124802e-05]
+ [3.268197542638518e-05 3.2923806429607794e-05 2.1957133867545053e-05
+  2.3175731257651933e-05 4.249558332958259e-05 2.5548870326019824e-05]
+ [5.8435478422325104e-05 3.2923806429607794e-05 2.5574114260962233e-05
+  3.1668852898292243e-05 4.249558332958259e-05 2.7643060093396343e-05]]
+2023-10-18 00:00:00 | NO2: [[3.209537317161448e-05 3.165160524076782e-05 3.165160524076782e-05
+  1.8692480807658285e-05 2.145646976714488e-05 1.0989328075083904e-05]
+ [3.638657653937116e-05 3.165160524076782e-05 2.3238764697453007e-05
+  2.145646976714488e-05 2.145646976714488e-05 1.4666934475826565e-05]
+ [3.638657653937116e-05 2.3238764697453007e-05 2.3238764697453007e-05
+  2.3428356143995188e-05 2.3428356143995188e-05 1.4666934475826565e-05]
+ [3.5867800761479884e-05 2.1732974346377887e-05 2.1732974346377887e-05
+  2.3428356143995188e-05 3.0143939511617646e-05 2.8202619432704523e-05]
+ [3.862884841510095e-05 2.1732974346377887e-05 2.963316183013376e-05
+  3.0143939511617646e-05 3.0143939511617646e-05 3.0228224204620346e-05]
+ [3.862884841510095e-05 2.963316183013376e-05 2.963316183013376e-05
+  2.3878863430581987e-05 2.3878863430581987e-05 3.0228224204620346e-05]]
+2023-10-19 00:00:00 | NO2: [[2.9836755857104436e-05 2.3482090909965336e-05 2.3482090909965336e-05
+  1.0356369784858543e-05 1.0356369784858543e-05 1.0356369784858543e-05]
+ [2.4008961190702394e-05 2.3482090909965336e-05 2.3482090909965336e-05
+  1.0356369784858543e-05 1.7916234355652705e-05 1.7916234355652705e-05]
+ [3.0596114811487496e-05 2.540787863836158e-05 2.540787863836158e-05
+  2.540787863836158e-05 1.7916234355652705e-05 1.7916234355652705e-05]
+ [3.0596114811487496e-05 2.559546919655986e-05 2.559546919655986e-05
+  2.559546919655986e-05 1.983893889700994e-05 1.983893889700994e-05]
+ [2.5841187380137853e-05 2.5841187380137853e-05 2.559546919655986e-05
+  2.586869777587708e-05 5.263509228825569e-05 5.263509228825569e-05]
+ [3.9103393646655604e-05 3.9103393646655604e-05 2.586869777587708e-05
+  2.586869777587708e-05 5.263509228825569e-05 5.263509228825569e-05]]
+2023-10-20 00:00:00 | NO2: [[2.6276931748725474e-05 3.451555676292628e-05 1.7895437849801965e-05
+  9.915669579640962e-06 2.6014395189122297e-05 2.357434823352378e-05]
+ [2.6276931748725474e-05 1.528216671431437e-05 3.0778908694628626e-05
+  7.785448360664304e-06 2.3010898075881414e-05 2.3010898075881414e-05]
+ [1.9714798327186145e-05 1.528216671431437e-05 3.0778908694628626e-05
+  3.0778908694628626e-05 1.55101533891866e-05 4.047813854413107e-05]
+ [2.7587289878283627e-05 2.7587289878283627e-05 2.3140180928749032e-05
+  2.7144089472130872e-05 1.55101533891866e-05 4.047813854413107e-05]
+ [1.8981980247190222e-05 3.117683081654832e-05 1.725657239148859e-05
+  3.439799911575392e-05 -- --]
+ [2.439184572722297e-05 3.117683081654832e-05 1.725657239148859e-05
+  8.99022870726185e-06 -- --]]
+2023-10-21 00:00:00 | NO2: [[2.807228156598285e-05 3.4229244192829356e-05 3.492826363071799e-05
+  2.1539841327467002e-05 3.340739931445569e-05 2.1727293642470613e-05]
+ [2.262804082420189e-05 3.908565849997103e-05 3.9570004446431994e-05
+  1.8434697267366573e-05 2.117880285368301e-05 2.2588545107282698e-05]
+ [3.4231423342134804e-05 3.015627407876309e-05 3.1707240850664675e-05
+  1.8434697267366573e-05 2.117880285368301e-05 2.428036168566905e-05]
+ [3.4231423342134804e-05 4.303369496483356e-05 3.983644273830578e-05
+  2.059887810901273e-05 3.97792573494371e-05 2.428036168566905e-05]
+ [5.425166091299616e-05 4.303369496483356e-05 3.983644273830578e-05
+  3.9811777241993695e-05 -- --]
+ [4.7449502744711936e-05 4.6388802729779854e-05 4.136529241804965e-05
+  3.9811777241993695e-05 -- --]]
+2023-10-22 00:00:00 | NO2: [[2.7325555493007414e-05 2.705345286813099e-05 3.045084304176271e-05
+  2.871284777938854e-05 2.0299370589782484e-05 3.811035639955662e-05]
+ [2.7325555493007414e-05 3.225300679332577e-05 2.269276956212707e-05
+  2.555149512772914e-05 2.0299370589782484e-05 2.9541231924667954e-05]
+ [2.5491375708952546e-05 3.225300679332577e-05 2.269276956212707e-05
+  2.444555502734147e-05 3.279929296695627e-05 2.9541231924667954e-05]
+ [3.474972254480235e-05 2.6316982257412747e-05 3.578468022169545e-05
+  2.444555502734147e-05 -- 1.9324845197843388e-05]
+ [3.474972254480235e-05 2.6316982257412747e-05 3.358862886670977e-05
+  3.918420406989753e-05 -- --]
+ [4.97805631312076e-05 5.244002750259824e-05 3.9598675357410684e-05 -- --
+  --]]
+2023-10-23 00:00:00 | NO2: [[-- -- -- -- -- --]
+ [-- -- -- -- -- --]
+ [-- -- -- -- -- --]
+ [-- -- -- -- -- --]
+ [-- -- -- -- -- --]
+ [-- -- -- -- -- --]]
+2023-10-24 00:00:00 | NO2: [[3.088252924499102e-05 3.088252924499102e-05 3.444073081482202e-05
+  2.6949499442707747e-05 2.6949499442707747e-05 2.2346541300066747e-05]
+ [2.2848378648632206e-05 4.004589209216647e-05 3.101955371676013e-05
+  3.101955371676013e-05 3.550688779796474e-05 2.978852171509061e-05]
+ [2.2848378648632206e-05 4.004589209216647e-05 3.830443893093616e-05
+  3.830443893093616e-05 3.0968833016231656e-05 4.2883475543931127e-05]
+ [4.1017909097718075e-05 3.648626079666428e-05 3.830443893093616e-05
+  3.830443893093616e-05 3.0968833016231656e-05 --]
+ [3.127947638859041e-05 4.132642425247468e-05 4.132642425247468e-05
+  3.7118439649930224e-05 -- --]
+ [3.127947638859041e-05 3.7244055420160294e-05 3.7244055420160294e-05
+  1.626083758310415e-05 1.7761713024810888e-05 1.7761713024810888e-05]]
 </pre></div>
 </div>
 </div>
@@ -950,15 +1105,6 @@ Sesudah normalisasi:
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="KNIME.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><strong>Analisis Data Ecoli Menggunakan KNIME</strong></p>
-      </div>
-    </a>
 </div>
                 </footer>
               
