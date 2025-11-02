@@ -383,7 +383,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengambilan-data-no2-sentinel-5p-untuk-wilayah-bangkalan-melalui-openeo">Pengambilan Data NO₂ Sentinel-5P untuk Wilayah Bangkalan melalui openEO</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengambilan-data-no2-sentinel-5p-untuk-wilayah-bangkalan-melalui-openeo">Pengambilan Data NO₂ Sentinel-5P untuk Wilayah Bangkalan melalui openEO</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#link-deploy">Link Deploy</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membaca-hasil-ekspor-netcdf-dan-mengekstrak-variabel-no2">Membaca Hasil Ekspor NetCDF dan Mengekstrak Variabel NO₂</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konversi-data-netcdf-ke-csv-untuk-analisis-lebih-lanjut">Konversi Data NetCDF ke CSV untuk Analisis Lebih Lanjut</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-data-no2-menjadi-bentuk-supervised-learning">Transformasi Data NO₂ Menjadi Bentuk Supervised Learning</a></li>
@@ -421,6 +424,9 @@ Rata-rata nilai NO₂ dihitung hanya untuk area yang telah ditentukan (Bangkalan
 Proses dikirim ke server dalam bentuk batch job, dan hasilnya disimpan dalam format <code class="docutils literal notranslate"><span class="pre">.nc</span></code> (NetCDF) untuk analisis lebih lanjut.</p></li>
 </ol>
 <hr class="docutils" />
+<section id="link-deploy">
+<h3>Link Deploy<a class="headerlink" href="#link-deploy" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://prediksi-no2-63m2susxdbqe7gols3gu6t.streamlit.app/">https://prediksi-no2-63m2susxdbqe7gols3gu6t.streamlit.app/</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">openeo</span>
@@ -488,13 +494,13 @@ Proses dikirim ke server dalam bentuk batch job, dan hasilnya disimpan dalam for
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Authenticated using refresh token.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0:00:00 Job &#39;j-2510241057484aabb613ff1616624ee2&#39;: send &#39;start&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0:00:00 Job &#39;j-2511022102494266bc9dc99f09d5c56b&#39;: send &#39;start&#39;
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0:00:13 Job &#39;j-2510241057484aabb613ff1616624ee2&#39;: created (progress 0%)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0:00:14 Job &#39;j-2511022102494266bc9dc99f09d5c56b&#39;: created (progress 0%)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0:00:18 Job &#39;j-2510241057484aabb613ff1616624ee2&#39;: created (progress 0%)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0:00:20 Job &#39;j-2511022102494266bc9dc99f09d5c56b&#39;: created (progress 0%)
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
@@ -536,6 +542,7 @@ Proses dikirim ke server dalam bentuk batch job, dan hasilnya disimpan dalam for
 </div>
 </div>
 </div>
+</section>
 </section>
 <section id="membaca-hasil-ekspor-netcdf-dan-mengekstrak-variabel-no2">
 <h2>Membaca Hasil Ekspor NetCDF dan Mengekstrak Variabel NO₂<a class="headerlink" href="#membaca-hasil-ekspor-netcdf-dan-mengekstrak-variabel-no2" title="Link to this heading">#</a></h2>
@@ -1121,7 +1128,10 @@ Sesudah normalisasi:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengambilan-data-no2-sentinel-5p-untuk-wilayah-bangkalan-melalui-openeo">Pengambilan Data NO₂ Sentinel-5P untuk Wilayah Bangkalan melalui openEO</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengambilan-data-no2-sentinel-5p-untuk-wilayah-bangkalan-melalui-openeo">Pengambilan Data NO₂ Sentinel-5P untuk Wilayah Bangkalan melalui openEO</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#link-deploy">Link Deploy</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#membaca-hasil-ekspor-netcdf-dan-mengekstrak-variabel-no2">Membaca Hasil Ekspor NetCDF dan Mengekstrak Variabel NO₂</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konversi-data-netcdf-ke-csv-untuk-analisis-lebih-lanjut">Konversi Data NetCDF ke CSV untuk Analisis Lebih Lanjut</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-data-no2-menjadi-bentuk-supervised-learning">Transformasi Data NO₂ Menjadi Bentuk Supervised Learning</a></li>
