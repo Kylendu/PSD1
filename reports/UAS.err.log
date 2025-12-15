@@ -1,0 +1,56 @@
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nbclient/client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/asyncio/base_events.py", line 684, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sktime.datasets import load_from_tsfile
+
+print("1. Memuat Data Mentah...")
+X_train_raw, y_train_raw = load_from_tsfile("ElectricDevices_TRAIN.ts")
+X_test_raw, y_test_raw = load_from_tsfile("ElectricDevices_TEST.ts")
+
+y_train_raw = y_train_raw.astype(int)
+y_test_raw = y_test_raw.astype(int)
+
+print(f"   - Train Asli : {X_train_raw.shape[0]}")
+print(f"   - Test Asli  : {X_test_raw.shape[0]}")
+
+print("\n2. Menggabungkan Dataset...")
+X_total = pd.concat([X_train_raw, X_test_raw], axis=0).reset_index(drop=True)
+y_total = np.concatenate([y_train_raw, y_test_raw], axis=0)
+
+print(f"TOTAL DATA GABUNGAN: {X_total.shape[0]} Sampel")
+print(f"Jumlah Fitur Waktu : {len(X_total.iloc[0, 0])} titik")
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mModuleNotFoundError[39m                       Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[1][39m[32m, line 5[39m
+[32m      3[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mmatplotlib[39;00m[34;01m.[39;00m[34;01mpyplot[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mplt[39;00m
+[32m      4[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mseaborn[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01msns[39;00m
+[32m----> [39m[32m5[39m [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01msktime[39;00m[34;01m.[39;00m[34;01mdatasets[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m load_from_tsfile
+[32m      7[39m [38;5;28mprint[39m([33m"[39m[33m1. Memuat Data Mentah...[39m[33m"[39m)
+[32m      8[39m X_train_raw, y_train_raw = load_from_tsfile([33m"[39m[33mElectricDevices_TRAIN.ts[39m[33m"[39m)
+
+[31mModuleNotFoundError[39m: No module named 'sktime'
+
